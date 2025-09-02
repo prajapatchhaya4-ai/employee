@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Navbar</title>
+</head>
+<body>
+  <div class="navbar">
+    {% if user.is_authenticated%}
+    <a class="active" href="logout">logout</a>
+    <a class="active" href="add">employee</a>
+     <a class="active" href="show">get_employee_details</a>
+    {%else%}
+
+  <!-- Navbar Start -->
+  <nav style="background-color: #333; padding: 10px;">
+    <a href="home" style="color: white; text-decoration: none; margin-right: 20px;">Home</a>
+    <a href="signup" style="color: white; text-decoration: none; margin-right: 20px;">signup</a>
+    <a href="signin" style="color: white; text-decoration: none; margin-right: 20px;">signin</a>
+    <a href="contact" style="color: white; text-decoration: none;">Contact</a>
+  </nav>
+  <!-- Navbar End -->
+
+  <h2>Welcome to Our Website</h2>
+   </div>
+  {%endif%}
+
+</body>
+ {%block content%}
+ {%endblock%}

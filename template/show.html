@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>All Employee Records</h2>
+    <table>
+        <tr>
+            <th>eid</th>
+            <th>name</th>
+            <th>age</th>
+            <th>mobile</th>
+            <th>email</th>
+            <th>city</th>
+            <th>salary</th>
+
+        </tr>
+        {% for emp in employees %}
+        <tr>
+            <td>{{ emp.eid }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.age }}</td>
+            <td>{{ emp.mobile }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.city }}</td>
+            <td>{{ emp.salary }}</td>
+            <td><a href="{% url  'edit'  emp.eid %}">update</a></td>
+             <td><a href="{% url  'delete'  emp.eid %}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
