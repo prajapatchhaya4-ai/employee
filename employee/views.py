@@ -22,13 +22,13 @@ def show(request):
    employees=Employee.objects.all()
    return render(request, 'show.html',{'employees':employees})   
 
-def edit(request,sid):
-   emp=Employee.objects.get(sid=sid)
+def edit(request,eid):
+   emp=Employee.objects.get(eid=eid)
    return render(request,'edit.html',{'emp':emp})
 
-def update(request,sid):
+def update(request,eid):
    if request.method=='POST':
-      emp=Employee.objects.get(sid=sid)
+      emp=Employee.objects.get(eid=eid)
       form=Empform(request.POST,instance=emp)
       if form.is_valid():
          form.save()
